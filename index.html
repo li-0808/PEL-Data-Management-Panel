@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="zh">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+		<title>首页 - PEL数据管理</title>
+		<link rel="icon" href="favicon.ico" type="image/ico">
+		<meta name="author" content="李垚瑞">
+		<link href="css/bootstrap.min.css" rel="stylesheet">
+		<link href="css/materialdesignicons.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="js/bootstrap-multitabs/multitabs.min.css">
+		<link href="css/style.min.css" rel="stylesheet">
+		<style>
+			
+			html {
+					height: 100%;
+					background-image: -webkit-radial-gradient(ellipse farthest-corner at center center, #1b44e4 0%, #020f3a 100%);
+					background-image: radial-gradient(ellipse farthest-corner at center center, #1b44e4 0%, #020f3a 100%);
+					cursor: move;
+				}
+				
+			.tou1 {
+				float: left;
+				font-family:
+			}
+		</style>
+	</head>
+
+	<body>
+		<div class="lyear-layout-web">
+			<div class="lyear-layout-container">
+				<!--左侧导航-->
+				<aside class="lyear-layout-sidebar">
+
+					<!-- logo -->
+					<div id="logo" class="sidebar-header">
+						<a href="index.html"><img src="images/logo-sidebar.png" title="LightYear" alt="LightYear" /></a>
+					</div>
+					<div class="lyear-layout-sidebar-scroll">
+
+						<nav class="sidebar-main">
+							<ul class="nav nav-drawer">
+								<li class="nav-item active"> <a class="multitabs" href="lyear_main.html"><i
+											class="mdi mdi-home"></i> <span>主页</span></a> </li>
+
+								<li class="nav-item nav-item-has-subnav">
+									<a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i>
+										<span>战队管理</span></a>
+									<ul class="nav nav-subnav">
+										<li> <a class="multitabs" href="lyear_pages_doc.html">战队列表</a> </li>
+										<li> <a class="multitabs" href="lyear_pages_add_doc.html">新增战队</a> </li>
+									</ul>
+								</li>
+								<li class="nav-item nav-item-has-subnav">
+									<a href="javascript:void(0)"><i class="mdi mdi-file-outline"></i>
+										<span>队员管理</span></a>
+
+									<ul class="nav nav-subnav">
+										<li> <a class="multitabs" href="lyear_pages_people.html">队员列表</a> </li>
+										<li> <a class="multitabs" href="lyear_pages_add_people.html">新增队员</a> </li>
+									</ul>
+								</li>
+								
+								<li class="nav-item nav-item-has-subnav">
+									<a href="javascript:void(0)"><i class="mdi mdi-format-align-justify"></i>
+										<span>数据显示</span></a>
+									<ul class="nav nav-subnav">
+										<li> <a class="multitabs" href="saijiData.html">个人数据</a> </li>
+										<li> <a class="multitabs" href="nbadata.html">nba</a> </li>
+										<li> <a class="multitabs" href="data1.html">内部面板</a> </li>
+										<li> <a href="nbadata.html" target="_blank">外部面板</a> </li>
+									</ul>
+								</li>
+								
+								<li class="nav-item nav-item-has-subnav">
+									<a href="javascript:void(0)"><i class="mdi mdi-account"></i> <span>表单</span></a>
+									<ul class="nav nav-subnav">
+										<li> <a class="multitabs" data-url="lyear_pages_profile.html"
+												href="javascript:void(0)"><i></i> 个人信息</a> </li>
+										<li> <a class="multitabs" data-url="lyear_pages_edit_pwd.html"
+												href="javascript:void(0)"><i></i> 修改密码</a> </li>
+									</ul>
+								</li>
+
+
+
+						</nav>
+
+						<div class="sidebar-footer">
+							<p class="copyright">Copyright &copy; 2019. <a target="_blank"
+									href="http://lyear.itshubao.com">IT书包</a> All rights reserved.</p>
+						</div>
+						
+					</div>
+
+				</aside>
+				<!--End 左侧导航-->
+
+				<!--头部信息-->
+				<header class="lyear-layout-header">
+
+					<nav class="navbar navbar-default">
+						<div class="topbar">
+
+							<div class="topbar-left">
+								<div class="lyear-aside-toggler">
+									<span class="lyear-toggler-bar"></span>
+									<span class="lyear-toggler-bar"></span>
+									<span class="lyear-toggler-bar"></span>
+								</div>
+							</div>
+
+							<h2 style="font-family: STXingkai, sans-serif;color:#ffffff;">
+								专业的和平精英职业联赛数据看板
+							</h2>
+
+							<ul class="topbar-right">
+								<li class="dropdown dropdown-profile">
+									<a href="javascript:void(0)" data-toggle="dropdown">
+										<img class="img-avatar img-avatar-48 m-r-10"
+											src="images/屏幕截图 2023-07-04 154440.png" alt="liyaorui" />
+										<span>梦泪 <span class="caret"></span></span>
+									</a>
+									<ul class="dropdown-menu dropdown-menu-right">
+										<li> <a class="multitabs" data-url="lyear_pages_profile.html"
+												href="javascript:void(0)"><i class="mdi mdi-account"></i> 个人信息</a> </li>
+										<li> <a class="multitabs" data-url="lyear_pages_edit_pwd.html"
+												href="javascript:void(0)"><i class="mdi mdi-lock-outline"></i> 修改密码</a>
+										</li>
+										<li> <a href="javascript:void(0)"><i class="mdi mdi-delete"></i> 清空缓存</a></li>
+										<li class="divider"></li>
+										<li> <a id="exsit"  href="lyear_pages_login_3.html"><i class="mdi mdi-logout-variant"></i>
+												退出登录</a> </li>
+									</ul>
+								</li>
+								
+							</ul>
+
+						</div>
+					</nav>
+
+				</header>
+				<!--End 头部信息-->
+
+				<!--页面主要内容-->
+				<main class="lyear-layout-content">
+
+					<div id="iframe-content"></div>
+
+				</main>
+				<!--End 页面主要内容-->
+			</div>
+		</div>
+
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="js/perfect-scrollbar.min.js"></script>
+		<script type="text/javascript" src="js/bootstrap-multitabs/multitabs.js"></script>
+		<script type="text/javascript" src="js/index.min.js"></script>
+		<script>
+			let str =sessionStorage.getItem("logedUser");
+			let logedUser = JSON.parse(str);
+			if(logedUser==null){
+				location.href='lyear_pages_login_3.html'
+			}
+			$("#exsit").click(function(e){
+				e.preventDefault();
+				sessionStorage.removeItem("logedUser");
+				location.href='lyear_pages_login_3.html'
+				
+			})
+		</script>
+	</body>
+</html>

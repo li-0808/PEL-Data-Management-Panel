@@ -1,0 +1,214 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>index</title>
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<link rel="stylesheet" href="css/comon0.css">
+		<script src="js/echarts.min.js"></script>
+	</head>
+	<script>
+		$(window).load(function() {
+			$(".loading").fadeOut()
+		})
+
+		/****/
+		$(document).ready(function() {
+			var whei = $(window).width()
+			$("html").css({
+				fontSize: whei / 20
+			})
+			$(window).resize(function() {
+				var whei = $(window).width()
+				$("html").css({
+					fontSize: whei / 20
+				})
+			});
+		});
+	</script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+			var html = $(".wrap ul").html()
+			$(".wrap ul").append(html)
+			var ls = $(".wrap li").length / 2 + 1
+			i = 0
+			ref = setInterval(function() {
+				i++
+				if (i == ls) {
+					i = 1
+					$(".wrap ul").css({
+						marginTop: 0
+					})
+					$(".wrap ul").animate({
+						marginTop: -'.52' * i + 'rem'
+					}, 1000)
+				}
+				$(".wrap ul").animate({
+					marginTop: -'.52' * i + 'rem'
+				}, 1000)
+
+
+			}, 2400);
+			var html2 = $(".adduser ul").html()
+			$(".adduser ul").append(html2)
+			var ls2 = $(".adduser li").length / 2 + 1
+			a = 0
+			ref = setInterval(function() {
+				a++
+				if (a == ls2) {
+					a = 1
+					$(".adduser ul").css({
+						marginTop: 0
+					})
+					$(".adduser ul").animate({
+						marginTop: -'.5' * a + 'rem'
+					}, 800)
+				}
+				$(".adduser ul").animate({
+					marginTop: -'.5' * a + 'rem'
+				}, 800)
+			}, 4300);
+		})
+	</script>
+	<script type="text/javascript" src="js/echarts.min.js"></script>
+	<script language="JavaScript" src="js/js.js"></script>
+	<body>
+		<div class="loading">
+			<div class="loadbox"> <img src="picture/loading.gif"> 页面加载中... </div>
+		</div>
+		<div class="head">
+			<h1>NBA可视化展板</h1>
+			<div class="weather">
+				<!--<img src="picture/weather.png"><span>多云转小雨</span>--><span id="showTime"></span>
+			</div>
+
+			<script>
+				var t = null;
+				t = setTimeout(time, 1000); //開始运行
+				function time() {
+					clearTimeout(t); //清除定时器
+					dt = new Date();
+					var y = dt.getFullYear();
+					var mt = dt.getMonth() + 1;
+					var day = dt.getDate();
+					var h = dt.getHours(); //获取时
+					var m = dt.getMinutes(); //获取分
+					var s = dt.getSeconds(); //获取秒
+					document.getElementById("showTime").innerHTML = y + "年" + mt + "月" + day + "-" + h + "时" + m + "分" + s + "秒";
+					t = setTimeout(time, 1000); //设定定时器，循环运行     
+				}
+			</script>
+		</div>
+		<div class="mainbox">
+			<ul class="clearfix">
+				<li>
+					<div class="boxall" style="height: 3.2rem">
+						<div class="alltitle">TOP10 总分分排名</div>
+						<div class="allnav" id="echart1"></div>
+						<div class="boxfoot"></div>
+					</div>
+					<div class="boxall" style="height: 3.2rem">
+						<div class="alltitle">TOP10 总篮板</div>
+						<div class="allnav" id="echart2"></div>
+						<div class="boxfoot"></div>
+					</div>
+					<div class="boxall" style="height: 3.2rem">
+						<div class="alltitle">TOP10 犯规占比</div>
+						<div class="allnav" id="echart3"></div>
+						<div class="boxfoot"></div>
+					</div>
+				</li>
+				<li>
+					<div class="bar">
+						<div class="barbox">
+							<ul class="clearfix">
+								<li class="pulll_left counter" id="countTeam">125</li>
+								<li class="pulll_left counter" id="totalScore">391</li>
+							</ul>
+						</div>
+						<div class="barbox2">
+							<ul class="clearfix">
+								<li class="pulll_left">总队数</li>
+								<li class="pulll_left">总得分</li>
+							</ul>
+						</div>
+					</div>
+					
+					<div class="map">
+						<div class="boxall" style="height: 8.2rem">
+							<div class="alltitle">前五名助攻失误抢断盖帽犯规得分</div>
+							<div class="allnav" id="echart4"></div>
+							<div class="boxfoot"></div>
+						</div>
+						
+			
+					</div>
+				</li>
+				<li>
+					<div class="boxall" style="height:7.2rem">
+						<div class="alltitle">公告</div>
+						<div class="alltitle" style="height:2.2rem">
+							<span style="color: aliceblue;">虎扑02月28日讯 今日常规赛，热火101-99击败76人，结束了4连败。此役，巴特勒14中9，罚球6中4，得到23分11板9助攻。</span>
+						</div>
+						<div class="addnew">
+							<div class="tit02"><span>TOP10 队伍</span></div>
+							<div class="adduser">
+								<ul class="clearfix" style="color:#F00;" id="infoUl">
+									<li class="clearfix">
+										<span class="pulll_left">1队</span>
+										<span class="pulll_right">投篮命中率:10% 三分命中率:20% 得分:20 </span>
+									</li>
+									<li class="clearfix">
+										<span class="pulll_left">2队</span>
+										<span class="pulll_right">投篮命中率:10% 三分命中率:20% 得分:20 </span>
+									</li>
+									<li class="clearfix">
+										<span class="pulll_left">3队</span>
+										<span class="pulll_right">投篮命中率:10% 三分命中率:20% 得分:20 </span>
+									</li>
+									<li class="clearfix">
+										<span class="pulll_left">4队</span>
+										<span class="pulll_right">投篮命中率:10% 三分命中率:20% 得分:20 </span>
+									</li>
+									<li class="clearfix">
+										<span class="pulll_left">5队</span>
+										<span class="pulll_right">投篮命中率:10% 三分命中率:20% 得分:20 </span>
+									</li>
+									<li class="clearfix">
+										<span class="pulll_left">6队</span>
+										<span class="pulll_right">投篮命中率:10% 三分命中率:20% 得分:20 </span>
+									</li>
+									<li class="clearfix">
+										<span class="pulll_left">7队</span>
+										<span class="pulll_right">投篮命中率:10% 三分命中率:20% 得分:20 </span>
+									</li>
+									<li class="clearfix">
+										<span class="pulll_left">8队</span>
+										<span class="pulll_right">投篮命中率:10% 三分命中率:20% 得分:20 </span>
+									</li>
+									<li class="clearfix">
+										<span class="pulll_left">9队</span>
+										<span class="pulll_right">投篮命中率:10% 三分命中率:20% 得分:20 </span>
+									</li>
+									<li class="clearfix">
+										<span class="pulll_left">10队</span>
+										<span class="pulll_right">投篮命中率:10% 三分命中率:20% 得分:20 </span>
+									</li>
+									
+								</ul>
+							</div>
+						</div>
+						<div class="boxfoot"></div>
+					</div>
+					
+				</li>
+			</ul>
+		</div>
+		<div class="back"></div>
+		<script type="text/javascript" src="js/china.js"></script>
+		<script type="text/javascript" src="js/area_echarts.js"></script>
+		<script src="js/js.js"></script>
+		
+
+	</body>
+</html>
